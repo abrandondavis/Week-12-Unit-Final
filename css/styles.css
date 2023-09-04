@@ -1,0 +1,22 @@
+
+.action-delete .delete-button {
+  visibility: hidden;
+  color: crimson;
+  position: relative;
+  z-index: 2;
+}
+
+.action-edit .edit-button {
+  visibility: hidden;
+  color: limegreen;
+  position: relative;
+  z-index: 2;
+}
+
+.action-delete:hover i {
+  visibility: visible;
+}
+
+#todo-header {
+  font-weight: 700;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Master</title>
+  <!-- bootstrap stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Other stylesheets -->
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="./css/glow.css" rel="stylesheet">
+
+  <!-- jQuery script file -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+
+<body>
+  
+  <div class="container">
+    <h1 style="--clr:#1e9bff" id="todo-header" class="mt-2 todo-header text-center">To Do List</h1>
+    <!-- New Task Creation -->
+    <div class="new-task" class="jumbotron">
+      <h2 class="mt-3">New Task</h2>
+      <input type="text" id="new-todo-name" class="form-control mt-1" placeholder="What is the Task To Do?">
+      <input type="text" id="new-todo-date" class="form-control mt-1" placeholder="When is the Task Due?">
+      <button id="add-new-task" class="btn btn-primary form-control mt-1 add-new-task">Add</button>
+    </div>
+
+    <!-- App Container -->
+    <div id="app">
+      <table class="table table-striped table-sm mt-5">
+        <!-- Table Head -->
+        <thead>
+          <th>No.</th>
+          <th>Task</th>
+          <th>Due Date</th>
+          <th><!-- This is just here to make the table border complete --></th>
+        </thead>
+        <!-- Table Body -->
+        <tbody id="table-body">
+
+        </tbody>
+      </table>
+
+      <!-- Theme toggle button -->
+      <button id="theme-toggle-button" type="button" class="btn btn-dark">Lights Off!</button>
+
+      <!-- Button trigger modal -->
+      <!-- This code is redundant and is tied to the edit buttons on the table rows -->
+      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#taskModal">
+        Launch demo modal
+      </button> -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="taskModalLabel">Edit Task</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input type="text" id="edit-todo-name" class="form-control mt-1" placeholder="What is the Task To Do?">
+              <input type="text" id="edit-todo-date" class="form-control mt-1" placeholder="When is the Task Due?">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="save-edit-button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS Link-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Other Scripts -->
+  <script type="module" src="./scripts/index.js"></script>
+  <script type="module" src="./scripts/app.js"></script>
+  <script type="module" src="./scripts/service.js"></script>
+  <script type="module" src="./scripts/theme.js"></script>
+  <script type="module" src="./scripts/domElements.js"></script>
+</body>
+
+</html>
